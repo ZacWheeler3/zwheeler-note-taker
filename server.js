@@ -1,6 +1,6 @@
 // Import Express.js
 const express = require('express');
-
+const apiRouter = require('routes');
 // Import built-in Node.js package 'path' to resolve path of files that are located on the server
 const path = require('path');
 
@@ -8,11 +8,12 @@ const path = require('path');
 const app = express();
 
 // Specify on which port the Express.js server will run
-const PORT = 3001;
+const PORT = 3000;
 
 // Static middleware pointing to the public folder
 app.use(express.static('public'));
 
+app.use('/api', apiRouter)
 // Create Express.js routes for default '/', '/send' and '/routes' endpoints
 app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
 
@@ -28,3 +29,5 @@ app.get('/api/notes', (req, res) =>
 app.listen(PORT, () =>
   console.log(`Example app listening at http://localhost:${PORT}`)
 );
+
+sdfsfsdfsdfsdfdsf
