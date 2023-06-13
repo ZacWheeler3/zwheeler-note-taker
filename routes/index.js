@@ -1,6 +1,5 @@
-// const apiRouter = require('express').Router();
-// const notesRouter = require('notes');
-// apiRouter.use('/notes', notesRouter );
-
-// module.exports = apiRouter;
-
+const router = require('express').Router()
+// Import our modular routers for /tips and /feedback
+const notesRouter = require('./notes');
+router.use('/notes', notesRouter);
+module.exports = router;
